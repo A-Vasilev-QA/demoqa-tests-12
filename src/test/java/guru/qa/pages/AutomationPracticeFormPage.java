@@ -7,15 +7,15 @@ import java.util.Date;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static java.lang.String.format;
 
 public class AutomationPracticeFormPage {
     private static final String FORM_TITLE = "Student Registration Form",
             TABLE_TITLE = "Thanks for submitting the form";
-    private static String genderLocator = ("label[for='gender-radio-%d']"),
-            hobbyLocator = ("label[for='hobbies-checkbox-%d']"),
+    private static String genderLocator = "label[for='gender-radio-%d']",
+            hobbyLocator = "label[for='hobbies-checkbox-%d']",
             stateLocator = "#react-select-3-option-%d",
             cityLocator = "#react-select-4-option-%d";
     private static SelenideElement
@@ -36,6 +36,8 @@ public class AutomationPracticeFormPage {
 
     public static void openPage() {
         open("/automation-practice-form");
+        executeJavaScript("$('footer').remove()");
+        executeJavaScript("$('#fixedban').remove()");
         formTitle.shouldHave(text(FORM_TITLE));
     }
 
@@ -53,7 +55,6 @@ public class AutomationPracticeFormPage {
 
     public static String selectGender(int option) {
         $(format(genderLocator, option)).click();
-
         return $(format(genderLocator, option)).text();
     }
 
@@ -65,7 +66,6 @@ public class AutomationPracticeFormPage {
         String fullDate;
         calendar.setDate(format("%td", birthDate), format("%tB", birthDate), format("%tY", birthDate));
         fullDate = format("%td %<tB,%<tY", birthDate);
-
         return fullDate;
     }
 

@@ -9,12 +9,12 @@ import static java.lang.String.format;
 public class TestData {
     public static Faker faker;
     public static String firstName,
-                        lastName,
-                        userEmail,
-                        userNumber,
-                        subjectLetter,
-                        fileName,
-                        currentAddress;
+            lastName,
+            userEmail,
+            userNumber,
+            subjectLetter,
+            fileName,
+            currentAddress;
     public static int genderNumber,
             stateNumber,
             cityNumber;

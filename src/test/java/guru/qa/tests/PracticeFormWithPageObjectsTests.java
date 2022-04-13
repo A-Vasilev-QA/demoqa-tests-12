@@ -14,8 +14,6 @@ public class PracticeFormWithPageObjectsTests extends BaseTest {
     public void fillFormTest() {
         generateTestData();
         openPage();
-        executeJavaScript("$('footer').remove()");
-        executeJavaScript("$('#fixedban').remove()");
         typeFirstName(TestData.firstName);
         typeLastName(lastName);
         typeUserEmail(userEmail);
