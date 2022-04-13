@@ -84,8 +84,10 @@ public class AutomationPracticeFormPage {
         String hobbies = "";
 
         for (int i = 0; i < isHobby.length; i++) {
-            $(format(hobbyLocator, i+1)).click();
-            hobbies += $(format(hobbyLocator, i+1)).text() + ", ";
+            if (isHobby[i]) {
+                $(format(hobbyLocator, i+1)).click();
+                hobbies += $(format(hobbyLocator, i+1)).text() + ", ";
+            }
         }
         if (hobbies.endsWith(", ")) {
             hobbies = hobbies.substring(0, hobbies.length() - 2);

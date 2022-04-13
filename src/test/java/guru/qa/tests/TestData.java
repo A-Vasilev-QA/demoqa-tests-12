@@ -9,12 +9,12 @@ import static java.lang.String.format;
 public class TestData {
     public static Faker faker;
     public static String firstName,
-            lastName,
-            userEmail,
-            userNumber,
-            subjectLetter,
-            fileName,
-            currentAddress;
+                        lastName,
+                        userEmail,
+                        userNumber,
+                        subjectLetter,
+                        fileName,
+                        currentAddress;
     public static int genderNumber,
             stateNumber,
             cityNumber;
@@ -25,7 +25,7 @@ public class TestData {
         faker = new Faker();
         firstName = faker.name().firstName();
         lastName = faker.name().lastName();
-        userEmail = format("%s%s@yopmail.com", firstName, lastName);
+        userEmail = format("%s%s@yopmail.com", firstName, lastName).toLowerCase();
         userNumber = faker.phoneNumber().subscriberNumber(10);
         subjectLetter = faker.regexify("[a-eg-hl-pr-v]");
         fileName = "1.jpg";
@@ -35,8 +35,8 @@ public class TestData {
         cityNumber = faker.number().numberBetween(0, 1);
         birthDate = faker.date().birthday();
         isHobby = new boolean[3];
-        for (boolean i : isHobby) {
-            i = faker.bool().bool();
+        for (int i = 0; i < isHobby.length; i++) {
+            isHobby[i] = faker.bool().bool();
         }
     }
 }

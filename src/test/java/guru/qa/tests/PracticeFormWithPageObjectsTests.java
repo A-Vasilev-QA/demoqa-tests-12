@@ -3,6 +3,7 @@ package guru.qa.tests;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.executeJavaScript;
+import static com.codeborne.selenide.Selenide.sleep;
 import static guru.qa.pages.AutomationPracticeFormPage.*;
 import static guru.qa.pages.AutomationPracticeFormPage.checkResultsValue;
 import static guru.qa.tests.TestData.*;

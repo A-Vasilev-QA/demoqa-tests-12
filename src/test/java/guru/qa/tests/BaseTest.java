@@ -13,7 +13,6 @@ public class BaseTest {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.timeout = 7500;
         Configuration.browserSize = "1920x1080";
-        //Configuration.headless = true;
     }
 
     @AfterEach
